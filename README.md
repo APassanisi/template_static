@@ -1,20 +1,18 @@
-# template_static
+# andrewpassanisi.com
 
 ## Build Setup
 
 ```bash
-# install dependencies
-$ npm install
+# Install dependencies
+$ npm i
 
-# serve with hot reload at localhost:3000
+# Development at https://localhost:3000
 $ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Generate static build
+$ npx nuxt generate
 
-# generate static project
-$ npm run generate
+# Serve static build at https://localhost:3000
+$ npx nuxt serve
+
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
