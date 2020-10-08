@@ -1,0 +1,474 @@
+@import './variables.scss';
+
+html {
+  margin-top: 4rem;
+  transition: .5s;
+  text-align: center;
+  background: $background;
+  color: $white;
+  font-family: 'Open Sans';
+}
+
+button,
+div {
+  transition: .3s;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  font-family: 'Amaranth';
+}
+
+.intro__detail-container,
+.meet__detail-container,
+.work__detail-container,
+.technologies__detail-container,
+.cta__detail-container,
+.footer__detail-container {
+  max-width: 475px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+button {
+  border-radius: 3rem;
+  padding: .5rem 2rem;
+  border: 2px solid $accentLight;
+  background: $accent;
+  color: $white;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  font-size: 1.1rem;
+  box-shadow: $boxShadow;
+
+  &.inverted {
+    background: $accentLight;
+    border: 2px solid $accent;
+
+    &:hover {
+      background: $accent;
+      border: 2px solid $accentLight;
+      transform: scale(1.015);
+    }
+  }
+
+  &:hover {
+    border: 2px solid $accent;
+    background: $accentLight;
+    transform: scale(1.015);
+  }
+}
+
+nav {
+  box-shadow: $boxShadow;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content:
+    space-between;
+  align-items: center;
+  height: 4rem;
+  background: $accent;
+  color: $white;
+  z-index: 1000;
+  padding: 0rem 1.5rem;
+
+  button {
+    font-size: .75rem;
+    padding: .5rem 1.5rem;
+  }
+
+  .nav-left {
+    display:
+      flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      margin-right: 1rem;
+
+      svg {
+        fill: white;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.intro {
+  position:
+    relative;
+  height: 34rem;
+  background-color: $nightSky;
+  overflow: hidden;
+
+  &__detail-container {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 7rem;
+    z-index: 200;
+  }
+
+  .profile-image>* {
+    box-shadow: $boxShadow;
+    margin-top:
+      3rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 5rem;
+    z-index: 200;
+  }
+
+  .transition-decor {
+    position: absolute;
+    z-index: 200;
+    bottom: 0;
+    width: 101%;
+
+    svg {
+      max-height: 13rem;
+      min-height: 7rem;
+      fill: $accent;
+      margin-bottom: -2rem;
+    }
+  }
+}
+
+.meet {
+  padding: 8rem 1rem 10rem 1rem;
+  background-color: $accent;
+  box-shadow: $boxShadow;
+}
+
+.offer {
+  padding: 8rem 1rem 4rem 1rem;
+
+  &__detail-container {
+    margin: 0 auto;
+    margin-top: -11rem;
+
+    .offering-card {
+      background: $backgroundLight;
+      padding: 2.5rem 1.5rem 3rem 1.5rem;
+      box-shadow: $boxShadow;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      button {
+        width: 75%;
+      }
+
+      &:first-child {
+        border-radius: $borderRadius $borderRadius 0 0;
+      }
+
+      &:nth-child(2) {
+        z-index: 100;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $borderRadius $borderRadius;
+      }
+    }
+  }
+}
+
+.work {
+  padding: 8rem 1rem 4rem 1rem;
+
+  &__detail-container {
+    padding: 0;
+
+    >a {
+      margin-left: 1rem;
+      margin-top: 2rem;
+    }
+
+    >a,
+    p {
+      display: inline-block;
+    }
+
+    &__job-container {
+      margin-top: 6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__job {
+        box-shadow: $boxShadow;
+        height: 8rem;
+        border-radius: $borderRadius;
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        &:hover {
+          .background-div {
+            filter: grayscale(0%);
+          }
+
+          a {
+            button {
+              background-color: $accent;
+              color: white;
+              border: 2px solid $accentLight;
+              box-shadow: $boxShadow;
+              &:hover {
+                background-color: $accentLight;
+                border: 2px solid $accent;
+              }
+            }
+          }
+        }
+
+        .browser-bar {
+          position: absolute;
+          top: -1px;
+          width: 100%;
+          background: $backgroundLight;
+          font-size: .75rem;
+          border-radius: $borderRadius $borderRadius 0 0;
+          box-shadow: $boxShadow;
+          color: white;
+          padding: .2rem 0;
+
+          &__control {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 80px;
+
+            span {
+              border-radius: 2rem;
+              height: 8px;
+              width: 8px;
+              display: inline-block;
+            }
+
+            &-red {
+              margin-right: .2rem;
+              background: #f55e57;
+            }
+
+            &-yellow {
+              margin-right: .2rem;
+              background: #fbbd31;
+            }
+
+            &-green {
+              background: #17b74c;
+            }
+          }
+        }
+
+
+        .background-div {
+          height: 100%;
+          width: 100%;
+          color: red;
+          background-size: 110% auto;
+          background-position: 40% 9%;
+          position: absolute;
+          border-radius: $borderRadius;
+          filter: grayscale(100%);
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        a {
+          z-index: 100;
+          margin-top: 17px;
+
+          button {
+            background-color: transparent;
+            color: transparent;
+            border: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.technologies {
+  padding: 8rem 1rem 8rem 1rem;
+
+  &__detail-container {
+    box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.14), inset 0px 1px 10px 0px rgba(0, 0, 0, 0.12), inset 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background-color: $backgroundDark;
+    margin: 0 auto;
+    border-radius: $borderRadius;
+    margin: 6rem auto 0 auto;
+  }
+}
+
+.cta {
+  background:
+    $accent;
+  padding: 4rem 1rem 8rem 1rem;
+
+  &__detail-container {
+    box-shadow: $boxShadow;
+    border-radius: $borderRadius;
+    margin: -6rem auto 0 auto;
+    padding: 4rem 1rem;
+    background: saturate($accent, 5%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 3rem 0;
+    }
+  }
+}
+
+.footer {
+  padding: 0 1rem 8rem 1rem;
+  background: $accent;
+
+  &__detail-container {
+    p {
+      font-size: .75rem;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem auto;
+
+      &__icon {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+      }
+
+      button {
+        border-radius: 5rem;
+        height: 3rem;
+        width: 3rem;
+        padding: .5rem;
+
+        svg {
+          color: $white !important;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+
+  .intro__detail-container,
+  .meet__detail-container,
+  .work__detail-container,
+  .technologies__detail-container,
+  .footer__detail-container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+
+  .intro {
+    height: 50rem;
+
+    &__detail-container {
+      top: 13rem;
+    }
+  }
+
+  .offer {
+    &__detail-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1000px;
+
+      .offering-card {
+
+        width: 33%;
+
+        &:first-child {
+          border-radius: $borderRadius 0 0 $borderRadius;
+        }
+
+        &:last-child {
+          border-radius: 0 $borderRadius $borderRadius 0;
+        }
+      }
+    }
+  }
+
+  .work {
+    &__detail-container {
+      &__job-container {
+        &__job {
+          width: 46.9%;
+          height: 12rem;
+          border-radius: $borderRadius;
+
+          &:nth-child(odd) {
+            margin-right: 1rem;
+          }
+
+          &:nth-child(even) {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .technologies {
+    &__detail-container {
+      margin-top: 6rem;
+    }
+  }
+
+  .cta {
+    &__detail-container {
+      max-width: 1000px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  .footer {
+    &__detail-container {
+      &__icons {
+        justify-content: space-evenly;
+        margin: 4rem auto;
+      }
+    }
+  }
+}
