@@ -6,7 +6,10 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -18,11 +21,19 @@
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg": "^0.1.12",
+    "@storybook/addon-actions": "^6.1.17",
+    "@storybook/addon-essentials": "^6.1.17",
+    "@storybook/addon-links": "^6.1.17",
+    "@storybook/vue": "^6.1.17",
+    "@vue/test-utils": "^1.1.2",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
     "node-sass": "^4.14.1",
+    "nuxt-fontawesome": "^0.4.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.2",
+    "vue-jest": "^3.0.4",
     "webp-loader": "^0.6.0"
   }
 }
